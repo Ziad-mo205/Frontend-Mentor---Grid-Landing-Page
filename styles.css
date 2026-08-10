@@ -61,3 +61,11 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+@font-face {
+  font-family: Inter;
+  src: url(./assets/fonts/inter/inter-variable.ttf) format("truetype");
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+}
