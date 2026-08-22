@@ -17,6 +17,10 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  background-color: hsl(228, 100%, 60%);
+  font-family: "Inter", sans-serif;
+  color: white;
 }
 
 img,
@@ -68,4 +72,236 @@ h6 {
   font-style: normal;
   font-weight: 400 500;
   font-display: swap;
+}
+
+nav {
+  border-block-end: 1px solid hsl(224, 100%, 95%, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.3rem;
+  padding-inline: 2.2rem 1.4rem;
+}
+
+input,
+nav img:last-of-type,
+ul {
+  display: none;
+}
+input:checked ~ label img:last-of-type {
+  display: block;
+}
+input:checked ~ label img:first-of-type,
+body:has(input:checked) main p {
+  display: none;
+}
+input:checked ~ ul {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 0;
+  background-color: hsl(220, 100%, 64%);
+}
+body:has(input:checked) nav {
+  background-color: hsl(220, 100%, 64%);
+}
+ul li {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+body:has(input:checked) main {
+  margin-block-start: 18rem;
+  padding-block-start: 0.1rem;
+}
+body:has(input:checked) {
+  background-color: hsl(228, 99%, 58%);
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: white;
+  position: relative;
+}
+nav a::before {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: white;
+  border-radius: 100vmax;
+  position: absolute;
+  left: -0.85rem;
+  top: 0.25rem;
+}
+
+nav label img {
+  width: 1.4rem;
+  cursor: pointer;
+}
+
+.intro p:first-of-type {
+  font-size: 2.4rem;
+  padding: 3rem 1.9rem 1rem;
+}
+
+.intro p:last-of-type {
+  font-size: 1rem;
+  padding: 0rem 1.9rem 3rem;
+  color: hsl(224, 100%, 95%);
+  font-weight: 400;
+}
+.intro {
+  border-block-end: 1px solid hsl(224, 100%, 95%, 0.2);
+}
+body:has(input:checked) .intro {
+  border-block-end: 0;
+}
+
+header {
+  border-block-end: 1px solid hsl(224, 100%, 95%, 0.2);
+  position: relative;
+}
+
+article img {
+  width: 1.8rem;
+}
+
+article {
+  margin-block-start: 1.5rem;
+  border-block-end: 1px solid hsl(224, 100%, 95%, 0.2);
+}
+.students {
+  margin-block-start: 1rem;
+}
+
+body:has(input:checked) article:first-of-type {
+  border-block-start: 0;
+  padding-block-start: 0;
+  margin-block-start: 0.5rem;
+}
+
+article div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 12rem;
+  margin-block-end: 11rem;
+  margin-inline: 1.8rem 3rem;
+}
+
+article data {
+  font-size: 2rem;
+}
+
+article p:last-of-type {
+  font-size: 0.8rem;
+  color: hsl(224, 100%, 95%);
+  margin-block: 0.1rem 1.5rem;
+}
+
+article p:first-of-type,
+article p:last-of-type {
+  padding-inline: 1.8rem;
+}
+
+.schools img {
+  width: 1.8rem;
+}
+
+.schools div {
+  display: flex;
+}
+
+@media (min-width: 1022px) {
+  nav {
+    padding-inline: 3.9rem 2.6rem;
+  }
+  main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .intro {
+    grid-column: 1/3;
+    grid-row: 1/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .intro p {
+    width: 78%;
+  }
+  .intro p:first-of-type {
+    font-size: 3rem;
+  }
+
+  .students {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    border-block-start: 0;
+    border-inline-start: 1px solid hsl(224, 100%, 95%, 0.2);
+    margin-block-start: 0;
+    padding-block-start: 1.5rem;
+  }
+
+  .schools {
+    grid-column: 4/5;
+    grid-row: 1/2;
+    border-inline-start: 1px solid hsl(224, 100%, 95%, 0.2);
+    margin-block-start: 0;
+    padding-block-start: 1.5rem;
+  }
+
+  .teacher {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    margin-block-start: 0;
+    padding-block-start: 1.5rem;
+    border-inline-start: 1px solid hsl(224, 100%, 95%, 0.2);
+  }
+
+  .graduation {
+    grid-column: 4/5;
+    grid-row: 2/3;
+    margin-block-start: 0;
+    padding-block-start: 1.5rem;
+    border-inline-start: 1px solid hsl(224, 100%, 95%, 0.2);
+  }
+
+  body:has(input:checked) main p {
+    display: flex;
+  }
+
+  input:checked ~ ul {
+    left: 75%;
+    width: 25%;
+    height: 100dvh;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-inline-end: 2.6rem;
+  }
+  input:checked ~ ul li {
+    font-size: 2rem;
+  }
+  input:checked ~ ul li:active {
+    border-block-end: 2px solid white;
+  }
+
+  body:has(input:checked) main {
+    margin-block-start: 0;
+  }
+}
+
+footer {
+  margin: 1.5rem 1.8rem;
+}
+footer p {
+  font-size: 0.8rem;
 }
